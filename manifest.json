@@ -3,13 +3,7 @@
     "Description": "CSCI4140 Assignment 2",
     "version": "0.1",
     "manifest_version": 3,
-    "option_page": "setting.html",
-    "content_script": [
-        {
-            "matches": ["*://*/*"],
-            "js": ["content.js"]
-        }
-    ],
+
     "action": {
         "default_title": "CSCI4140 Assignment 2",
         "default_popup": "popup.html"
