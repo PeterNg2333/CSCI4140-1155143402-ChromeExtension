@@ -3,12 +3,25 @@
     "description": "CSCI4140 Assignment 2",
     "version": "0.1",
     "manifest_version": 3,
-
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs",
+        "contextMenus"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["content.js", "jquery-3.7.1.js", "tmp.js", "caman.full.js"]
+        }
+    ],
     "action": {
         "default_title": "CSCI4140 Assignment 2",
         "default_popup": "popup.html"
     },
     "background":{
         "service_worker": "background.js"
-    }
+    },
+    "options_page": "setting.html"
 }

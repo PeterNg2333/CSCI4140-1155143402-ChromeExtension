@@ -4,10 +4,9 @@
     <script type="text/javascript" src="jquery-3.7.1.js"></script>
     <script type="text/javascript" src="caman.full.js"></script>
 </head>
-<body>
-    <form id="form" method="post" action="upload.php" enctype="multipart/form-data" target="iframe">
-        <input type="submit" id="sbt_utc" value="A"/>
-        <input type="submit" id="sbt_sq" value="B"/>
-        <input type="submit" id="sbt_set" value="C"/>
+<body style="min-width: 150px;">
+    <h3> Open setting page: </h3>
+    <form id="form" method="post" action="upload.php" enctype="multipart/form-data" target="iframe" style="display: flex;justify-content: center;flex-wrap: wrap;">
+        <button><a id="optionLink" href="setting.html" target="_blank">Open Options Page</a></button>
     </form>
 </body>
