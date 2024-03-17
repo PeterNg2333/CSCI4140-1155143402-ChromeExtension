@@ -9,6 +9,7 @@ function handleMessages(request, sender, sendResponse) {
         console.log('main() function called');
     }
     if (request.message === 'uploadImage' && request.URL){
+        url = request.URL;
         sendResponse({message: 'uploadImage'});
         console.log('uploadImage function called');
         window.addEventListener('load', uploadImage(request.URL));
@@ -21,6 +22,7 @@ function uploadImage(url){
     document.querySelector('a[data-target="anywhere-upload-paste-url"]').click();
     setTimeout(function(){
         document.querySelector('#fullscreen-modal-body > div > textarea').value = myParam;
+        url = myParam;
     }, 500);
     setTimeout(function(){
         document.querySelector('#fullscreen-modal-box > form > div.btn-container > button').click();
@@ -109,26 +111,12 @@ function addCamanJs(){
 
     // Set the source of the image
     img.crossOrigin = 'anonymous';
-
-    fetch('https://sitechecker.pro/wp-content/uploads/2023/05/URL-meaning.jpg', {
-        mode: 'no-cors'
-    }).then(res => {
-        console.log('response', res);
-        // Create a blob URL from the response stream
-        b = res;
-        return res;
-    }).then(blob => {
-        console.log('blob', blob);
-        a = blob;
-        // Create a URL for the blob object
-        var imgURL = URL.createObjectURL(blob);
-        // Set the image source to the blob URL
-        img.src = imgURL;
-    }).catch(error => {
-        console.error('Error fetching the image:', error);
+    chrome.runtime.sendMessage({message:"getBase64", data: url}, function(response){
+        console.log(response);
+        var base64 = response.data 
+        img.src = base64;
     });
-            
-    }
+    }   
 
 function addHandlers(){
     var brightness = document.getElementById('cssci4140-brightness');

@@ -16,6 +16,29 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     }
 });
 
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    console.log('Message received: ' + request.message);
+    if (request.message === 'getBase64' && request.data) {
+        console.log('getBase64 function called');
+        fetch(request.data)
+            .then(response => response.blob())
+            .then(blob => {
+                const reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = function() {
+                    const base64data = reader.result;
+                    console.log(base64data);
+                    sendResponse({farewell: "ok", message: 'base64', data: base64data});
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching image:', error);
+                sendResponse({farewell: "error", message: 'Failed to fetch image'});
+            });
+        return true; // This is crucial for async sendResponse
+    }
+});
+
 // Create context menu and add listener
 chrome.runtime.onInstalled.addListener(function() {
     chrome.contextMenus.create({
