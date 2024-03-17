@@ -1,7 +1,7 @@
 {
     "name": "CSCI4140 Assignment 2",
     "description": "CSCI4140 Assignment 2",
-    "version": "0.1",
+    "version": "4.2",
     "manifest_version": 3,
     "permissions": [
         "storage",
