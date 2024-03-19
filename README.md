@@ -1,5 +1,8 @@
 # CSCI4140-1155143402-ChromeExtension
 
+## Github Link
+- https://github.com/PeterNg2333/CSCI4140-1155143402-ChromeExtension
+
 ## Introduction
 This assignment involves creating a Chrome extension for a Web Instagram application. The extension will enhance the functionality of the Web Instagram application, allowing users to perform advanced editing on their images and save any image they like to their album from any website they are browsing.
 
