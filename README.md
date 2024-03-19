@@ -14,6 +14,7 @@ This assignment involves creating a Chrome extension for a Web Instagram applica
 - background.js: service worker for the extension
 - content.js: content script for injecting Dom in the target page
 - tmp.js: the script to be injected into Cheeverto in order the update the uploaded image
+- testing.mkv: Demo video in case the extension cannot work in other environment
 
 ## Building the System
 A Manifest V3 extension is implemented
