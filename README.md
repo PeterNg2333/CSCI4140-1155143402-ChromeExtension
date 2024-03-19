@@ -18,8 +18,10 @@ A Manifest V3 extension is implemented
 ## Completed Parts
 - Task 1:  Setting up Chevereto in Your Local Machine
     1.  Chevereto is deployed on a local machine for testing the functionality of the Chrome extension. However, since I cannot use nmtan/chevereto in my window version docker, I decided to use linuxserver/chevereto (please check the docker document)
-    
+
 - Task 2: Extension Setting
+  - You can modify the Cheeverto URL via this URL (popup.html). 
+  - You can click "Set" button to save in local storage and reload next time.
 
 - Task 3: Enhancing Chevereto’s Photo Editing Feature
   - Injecting Edit with CamanJS button and showing the Photo Editor for the selected image
@@ -28,4 +30,5 @@ A Manifest V3 extension is implemented
   - Uploading the edited images to Chevereto server after injecting tmp.js and update the uploaded images
 
 - Task 4: Uploading Web Images with Right Click
-  - Adding option in context menu which allow uploading image to Chevereto via URL (only image with url can be uploaded instead of blob image and base64 url)
+  - Adding option in context menu which allow uploading image to Chevereto via URL 
+  - Web images must be REAL url can be uploaded instead of blob image and base64 url
